@@ -26,21 +26,21 @@ services:
     depends_on:
       - "db"
 
-  # phpmyadmin:
-  #   image: phpmyadmin/phpmyadmin:latest
-  #   restart: always
-  #   environment:
-  #     PMA_HOST: db
-  #     PMA_USER: root
-  #     PMA_PASSWORD: sq1dev
-  #   ports:
-  #     - "8086:80"
-
-  adminer:
-    image: adminer:4.8.1
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin:latest
     restart: always
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: sq1dev
     ports:
-      - 8086:8080
-    depends_on:
-      - "db"
+      - "8086:80"
+
+  # adminer:
+  #   image: adminer:4.8.1
+  #   restart: always
+  #   ports:
+  #     - 8086:8080
+  #   depends_on:
+  #     - "db"
 
